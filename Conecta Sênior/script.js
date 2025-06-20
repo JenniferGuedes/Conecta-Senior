@@ -11,47 +11,53 @@ function adicionarMedicamento() {
   contador++;
 }
 
-//Gerar PDF
 async function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
+  // Coletando os dados do formulário
   const nome = document.getElementById("nome").value;
   const medicamento = document.getElementById("medicamento").value;
   const atividade = document.getElementById("atividade").value;
   const horario = document.getElementById("horario").value;
   const idade = document.getElementById("idade").value;
-  
 
+  // Cabeçalho do PDF
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(14);
   doc.text("Ficha do Idoso", 10, 15);
 
+  // Dados do idoso
   doc.setFont("Helvetica", "normal");
   doc.setFontSize(12);
   doc.text(`Nome: ${nome}`, 10, 25);
-  doc.text(`Idade: ${idade}`, 10, 29.5);
+  doc.text(`Idade: ${idade}`, 10, 30);
+  doc.text(`Atividade: ${atividade}`, 10, 35);
 
+  // Título da seção: Rotina do Dia
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(12);
+  doc.text("Rotina do Dia", 105, 45, { align: "center" });
+
+  // Tabela de rotina
   const rotinaData = [
     ["Medicamento", medicamento || "-"],
-    ["Atividade", atividade || "-"],
     ["Horário", horario || "-"]
-  
   ];
 
   doc.autoTable({
-    head: [["Rotina do Dia"]],
+    head: [["Item", "Detalhes"]],
     body: rotinaData,
-    startY: 30,
+    startY: 50,
     theme: "striped",
     headStyles: {
-        fillColor: [165, 42, 42],  
-        textColor: 255,
-        halign: "center"
-                
-  }
+      fillColor: [165, 42, 42],
+      textColor: 255,
+      halign: "center"
+    }
   });
 
+  // Captura os medicamentos adicionais
   const yPos = doc.lastAutoTable.finalY + 10;
   const inputs = document.querySelectorAll("#lista-medicamentos input");
   const medicamentos = [];
@@ -60,23 +66,33 @@ async function gerarPDF() {
     medicamentos.push([`Medicamento ${i + 1}`, input.value || "-"]);
   });
 
+  // Título da seção: Medicamentos do Dia
+  doc.setFont("Helvetica", "bold");
+  doc.text("Medicamentos do Dia", 105, yPos, { align: "center" });
+
+  // Tabela de medicamentos
   doc.autoTable({
-    head: [["Medicamentos do Dia"]],
+    head: [["Item", "Nome do Medicamento"]],
     body: medicamentos,
-    startY: yPos,
+    startY: yPos + 5,
     theme: "striped",
     headStyles: {
-        fillColor: [165, 42, 42],
-        textColor: 255,
-        halign: "center"
-  }
+      fillColor: [165, 42, 42],
+      textColor: 255,
+      halign: "center"
+    }
   });
 
+  // Rodapé com autoria
   const pageHeight = doc.internal.pageSize.height;
   doc.setFontSize(10);
-  doc.text("Projeto desenvolvido por: Jennifer da Silva Guedes - RA:244457.", 10, pageHeight - 20);
+  doc.setFont("Helvetica", "italic");
+  doc.text(
+    "Projeto desenvolvido por: Jennifer da Silva Guedes - RA: 244457.",
+    10,
+    pageHeight - 20
+  );
 
+  // Salva o PDF
   doc.save("Ficha_Idoso.pdf");
-
 }
-
