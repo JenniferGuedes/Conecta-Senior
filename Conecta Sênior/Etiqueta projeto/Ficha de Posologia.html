@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Descrição do projeto-->
+    <title>Como tomar?</title>
+    <meta name="Etiqueta de Posologia para Idosos" content="Etiqueta para facilitar a tomada correta de medicamentos dos idosos ao voltarem para casa."> 
+    <meta name="author" content="Jennifer da Silva Guedes">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <style>
+        
+/*Fundo da página*/
+body{
+    background-color: #ccc;
+}
+
+/*Título, Acessibilidade, e Rodapé*/
+h2{
+    color:brown;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+summary{
+    color:brown;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
+footer{
+    color:brown;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;  
+    text-align: center; 
+}
+
+/*Tabela*/
+table {
+  margin:0 auto;
+  background:linear-gradient(to right, #FFE4C4, #e2725b);
+  border-style: double;
+  border-color: brown;
+  border-radius: 10px;
+}
+    </style>
+    <main>
+        <header>
+
+<!--Tabela para digitação de medicamentos e posologia-->
+
+        <table border="2">
+
+            <thead>
+                <tr>
+                    <th>
+                        <h2>Como tomar meu medicamento?</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <section>
+                    <form>
+                        <tr>
+                            <td style="text-align: center;">Nome do Medicamento: <br>
+                                <input type="text" id="medicamento" name="medicamento" placeholder="Digite o medicamento..."> </td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="text-align: center;">Apresentação:  <br> 
+                                <input type="text" id="apresentacao" name="apresentacao" placeholder="Digite a apresentação..."> </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align: center;">Como tomar? <br> 
+                                <input type="text" id="posologia" name="posologia" placeholder="Digite a posologia..."> </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align: center;">Início de tratamento: <br> 
+                                <input type="date" id="tratamento1" name="tratamento1"> </td>
+                        </tr>
+
+                        <tr>
+                            <td style="text-align: center;">Final de tratamento: <br> 
+                                <input type="date" id="tratamento2" name="tratamento2"> </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">Observações: <br> 
+                                <input type="text" id="obs" name="obs" placeholder="Digite a observação..."></td>
+                        </tr>
+                    </form>
+                </section>
+                </table>
+
+<!--Acessibilidade para não alfabetizados-->
+                <section>
+                    <details>
+                        <summary>Clique aqui, e abra a acessibilidade para não alfabetizados</summary>
+                        <table border="2">
+            <thead>
+                <tr>
+                    <th>
+                        <h2>Como tomar meu medicamento?</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <section>
+                <tr>
+                    <td style="text-align: center;">Nome do Medicamento:(Cuidador) <br>
+                         <input type="text" id="medicamento" name="medicamento" placeholder="Digite o medicamento..."> </td>
+                </tr>
+                
+<!--Tabela de imagens - Apresentação do medicamento-->
+                <tr>
+                    <form>
+                        <td style="text-align: center;">Apresentação: <br>                      
+                        <figure>
+                            <img src="./assets/Pills.jpg" width="50" style="float: inline-start;" alt="Pílulas">                        
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/Syrup.jpg" width="50" style="float: inline-start;" alt="Xarope">                        
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/ointment.jpg" width="56" style="float: inline-start;" alt="Pomada">                        
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/Syringe.jpg" width="50" style="float: inline-start;" alt="Insulina">                        
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/eyedrops1.jpg" width="55" style="float: inline-start;" alt="Colírio">                        
+                        </figure>
+                        </td>
+                    </form>
+
+
+                </tr>
+
+<!--Imagens em Como Tomar?-->
+                <tr>
+                    <td style="text-align: center;">Como tomar? <br>                      
+                        <figure>
+                            <img src="./assets/Plate breakfast.png" width="80" style="float: left;" alt="Prato cafe">
+                                                 
+                        </figure>
+                                           
+                        <figure>
+                            <img src="./assets/Plate lunch.png" width="80" style="float: left;" alt="Prato almoco">                     
+                        </figure>
+                       
+                    
+                        <figure>
+                            <img src="./assets/Plate Night.png" width="80" style="float: left;" alt="Prato janta">
+                       
+                        </figure>
+                        
+                </form>
+
+                </tr>
+                
+<!--Observações para os cuidadores-->
+                <tr>
+                    <td style="text-align: center;">Observações (Cuidador): <br> 
+                        <input type="text" id="obs" name="obs" placeholder="Digite a observação..."> </td>
+                </tr>
+                </section>
+        
+                    
+                </table>
+                    </details>
+                </section>
+            </tbody>
+        
+        </header>
+    </main>
+ </body>
+<footer> 
+    <tfoot><p>&copy; Todos os direitos reservados. Feito por Jennifer Guedes - 244457</p></tfoot> 
+</footer>
+
+</html>

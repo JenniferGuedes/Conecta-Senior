@@ -1,0 +1,65 @@
+.header .container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* título à esquerda, navegação à direita */
+    align-items: center;
+    background: linear-gradient(to right, #FFE4C4, #e2725b)
+    
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+}
+
+h2 {
+    color: brown;
+}
+
+h3{
+    color: brown;
+}
+.navigation {
+    display: flex;
+    gap: 20px;
+    a {
+  color: brown; 
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: #FFE4C4;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: brown;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+}
+
+body{
+    background-color: #ccc;
+}
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    color: brown;
+    background:linear-gradient(to right, #FFE4C4, #e2725b)
+}
