@@ -21,6 +21,18 @@ h2 {
 h3{
     color: brown;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1; /* empurra o footer para baixo */
+}
+
 .navigation {
     display: flex;
     gap: 20px;
@@ -30,7 +42,7 @@ h3{
   position: relative;
   transition: color 0.3s ease;
 }
-
+/*Sublinhado abaixo da navegação*/
 a::after {
   content: "";
   position: absolute;
@@ -57,10 +69,19 @@ body{
 }
 
 .footer {
-    padding: 2vh 5vw;
-    font-size: 1rem;
-    width: 100%;
-    display: flex;
-    color: brown;
-    background:linear-gradient(to right, #FFE4C4, #e2725b)
+  width: 100%;
+  background: linear-gradient(to right, #FFE4C4, #e2725b);
+  color: brown;
+  padding: 20px 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0; /* impede o footer de colapsar em telas pequenas */
+  overflow-x: hidden;
 }
+

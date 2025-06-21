@@ -15,14 +15,14 @@ async function gerarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // Coletando os dados do formulário
+  // Coleta de dados do formulário
   const nome = document.getElementById("nome").value;
   const medicamento = document.getElementById("medicamento").value;
   const atividade = document.getElementById("atividade").value;
   const horario = document.getElementById("horario").value;
   const idade = document.getElementById("idade").value;
 
-  // Cabeçalho do PDF
+  // Cabeçalho
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(14);
   doc.text("Ficha do Idoso", 10, 15);
@@ -34,30 +34,34 @@ async function gerarPDF() {
   doc.text(`Idade: ${idade}`, 10, 30);
   doc.text(`Atividade: ${atividade}`, 10, 35);
 
-  // Título da seção: Rotina do Dia
+  // --- ROTINA DO DIA ---
   doc.setFont("Helvetica", "bold");
   doc.setFontSize(12);
   doc.text("Rotina do Dia", 105, 45, { align: "center" });
 
-  // Tabela de rotina
+  doc.setDrawColor(164, 42, 42);
+  doc.setLineWidth(0.8);
+  doc.line(20, 47, 190, 47); // linha marrom decorativa abaixo do título
+
   const rotinaData = [
     ["Medicamento", medicamento || "-"],
     ["Horário", horario || "-"]
   ];
 
   doc.autoTable({
-    head: [["Item", "Detalhes"]],
     body: rotinaData,
     startY: 50,
     theme: "striped",
-    headStyles: {
-      fillColor: [165, 42, 42],
-      textColor: 255,
-      halign: "center"
+    styles: {
+      font: "helvetica",
+      halign: "left"
+    },
+    didParseCell: function (data) {
+      data.cell.styles.fillColor = [255, 255, 255]; // fundo branco nas células
     }
   });
 
-  // Captura os medicamentos adicionais
+  // --- MEDICAMENTOS DO DIA ---
   const yPos = doc.lastAutoTable.finalY + 10;
   const inputs = document.querySelectorAll("#lista-medicamentos input");
   const medicamentos = [];
@@ -66,20 +70,23 @@ async function gerarPDF() {
     medicamentos.push([`Medicamento ${i + 1}`, input.value || "-"]);
   });
 
-  // Título da seção: Medicamentos do Dia
   doc.setFont("Helvetica", "bold");
   doc.text("Medicamentos do Dia", 105, yPos, { align: "center" });
 
-  // Tabela de medicamentos
+  doc.setDrawColor(164, 42, 42);
+  doc.setLineWidth(0.8);
+  doc.line(20, yPos + 2, 190, yPos + 2);
+
   doc.autoTable({
-    head: [["Item", "Nome do Medicamento"]],
     body: medicamentos,
     startY: yPos + 5,
     theme: "striped",
-    headStyles: {
-      fillColor: [165, 42, 42],
-      textColor: 255,
-      halign: "center"
+    styles: {
+      font: "helvetica",
+      halign: "left"
+    },
+    didParseCell: function (data) {
+      data.cell.styles.fillColor = [255, 255, 255];
     }
   });
 
@@ -93,6 +100,5 @@ async function gerarPDF() {
     pageHeight - 20
   );
 
-  // Salva o PDF
   doc.save("Ficha_Idoso.pdf");
 }
