@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Descrição do projeto-->
+    <title>Como tomar?</title>
+    <meta name="Etiqueta de Posologia para Idosos" content="Etiqueta para facilitar a tomada correta de medicamentos dos idosos ao voltarem para casa."> 
+    <meta name="author" content="Jennifer da Silva Guedes">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+
+<!--Tabela para digitação de medicamentos e posologia-->
+
+        <table border="2">
+
+            <thead>
+                <tr>
+                    <th>
+                        <h2>Como tomar meu medicamento?</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <section>
+                    <form>
+                        <tr>
+                            <td>Nome do Medicamento: <br>
+                                <input type="text" class="field" id="medicamento" name="medicamento" placeholder="Digite o medicamento..." > </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Apresentação:  <br> 
+                                <input type="text" class="field" id="apresentacao" name="apresentacao" placeholder="Digite a apresentação..."> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Como tomar? <br> 
+                                <input type="text" class="field" id="posologia" name="posologia" placeholder="Digite a posologia..."> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Início de tratamento: <br> 
+                                <input type="date" class="field" id="tratamento1" name="tratamento1"> </td>
+                        </tr>
+
+                        <tr>
+                            <td>Final de tratamento: <br> 
+                                <input type="date" class="field" id="tratamento2" name="tratamento2"> </td>
+                        </tr>
+                        <tr>
+                            <td>Observações: <br> 
+                                <input type="text" class="field" id="obs" name="obs" placeholder="Digite a observação..."></td>
+                        </tr>
+                    </form>
+                </section>
+                </table>
+
+<!--Acessibilidade para não alfabetizados-->
+                <section>
+                    <details>
+                        <summary>Clique aqui, e abra a acessibilidade para não alfabetizados</summary>
+                        <table border="2">
+            <thead>
+                <tr>
+                    <th>
+                        <h2>Como tomar meu medicamento?</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <section>
+                <tr>
+                    <td>Nome do Medicamento:(Cuidador) <br>
+                         <input type="text" class="field" id="medicamento" name="medicamento" placeholder="Digite o medicamento..."> </td>
+                </tr>
+                
+<!--Tabela de imagens - Apresentação do medicamento-->
+                <tr>
+                    <form>
+                        <td>Apresentação: <br>                      
+                        <figure>
+                            <img src="./assets/Pills.jpg" class="img" alt="Pílulas">        
+                        <label>
+                        <input type="checkbox"class="checkbox">
+                        </label>                
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/Syrup.jpg" class="img" alt="Xarope"> 
+                        <label>
+                        <input type="checkbox"class="checkbox">
+                        </label>                       
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/ointment.jpg" class="img"  alt="Pomada">  
+                        <label>
+                        <input type="checkbox"class="checkbox">
+                        </label>                 
+                        </figure>
+                        
+
+                        <figure>
+                            <img src="./assets/Syringe.jpg" class="img"  alt="Insulina"> 
+                        <label>
+                        <input type="checkbox"class="checkbox">
+                        </label>                       
+                        </figure>
+
+                        <figure>
+                            <img src="./assets/eyedrops1.jpg"class="img" alt="Colírio">  
+                        <label>
+                        <input type="checkbox"class="checkbox">
+                        </label>                      
+                        </figure>
+                        </td>
+                    </form>
+
+
+                </tr>
+
+<!--Imagens em Como Tomar?-->
+                <tr>
+                    <td>Como tomar? <br>  
+                                       
+                            <figure>
+                                <img src="./assets/Plate breakfast.png" class="img" alt="Prato cafe">   
+                            <label>
+                            <input type="checkbox"class="checkbox">
+                            </label>            
+                            </figure>
+                           
+                            <figure>
+                                <img src="./assets/Plate lunch.png" class="img"  alt="Prato almoco"> 
+                            <label>
+                            <input type="checkbox"class="checkbox">
+                            </label>                    
+                            </figure>
+                        
+                            <figure>
+                                <img src="./assets/Plate Night.png"  class="img" alt="Prato janta">
+                            <label>
+                            <input type="checkbox"class="checkbox">
+                            </label>
+                            </figure>
+                        
+                </form>
+
+                </tr>
+                
+<!--Observações para os cuidadores-->
+                <tr>
+                    <td>Observações (Cuidador): <br> 
+                        <input type="text" class="field" id="obs" name="obs" placeholder="Digite a observação..."> </td>
+                </tr>
+                </section>
+        
+                    
+                </table>
+                    </details>
+                </section>
+            </tbody>
+        
+        </header>
+
+    </main>
+    <footer> 
+    <p>&copy; Todos os direitos reservados. Feito por Jennifer Guedes - RA:244457</p></tfoot> 
+    </footer>
+ </body>
+
+
+</html>

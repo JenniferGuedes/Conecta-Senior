@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #ccc;
+}
+
+h2{
+    color:brown;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+footer, summary{
+    color:brown;
+    font-size: 17px;  
+    text-align: center; 
+    font-weight: bold;
+}
+
+/*Tabela*/
+table {
+  margin:1rem auto;
+  background:linear-gradient(to right, #FFE4C4, #e2725b);
+  border-style: double;
+  border-color: brown;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+td, th{
+    font-family: "Roboto";
+    padding: 0.6rem;
+    text-align: center;
+}
+
+td figure{
+    display: inline-block;
+    text-align: center;
+    margin: 0 0.5rem;
+    vertical-align: top;
+}
+
+.img{
+    display: block;
+    margin-bottom:0.4rem;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.checkbox{
+    transform: scale(1.5);
+    margin-top: 0.2rem;
+    vertical-align: middle;
+    accent-color: #ffe4c4;
+    cursor: pointer;
+}
+
+.checkbox:hover{
+    accent-color: #e2725b;
+}
+
+.placeholder{
+  font-family: "Roboto";  
+}
+
+.field{
+    all: unset;
+    border: 3px solid brown;
+    background-color: #FFE4C4;
+    border-radius: 0.4rem;
+    font-family: "Roboto";
+    
+}

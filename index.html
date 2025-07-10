@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conecta Sênior</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Conecta Sênior</h1>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#rotinas">Rotinas 💊</a></li>
+        <li><a href="#medicamentos">Medicamentos 💊</a></li>
+        <li><a href="#telefones">Telefones 💊</a></li>
+        <li><a href="Etiqueta-projeto/index.html" target="_blank">Acesso ao 'Como Tomar?' 💊</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-label="Apresentação do Projeto" class="secao1">
+      <h2>Bem-vindos ao Conecta Sênior!</h2>
+      <p>O Conecta Sênior é um projeto de extensão da Universidade Santa Cecília (UNISANTA), criado por Jennifer da Silva Guedes, para facilitar o registro de medicamentos e rotinas do idoso com base no projeto "Como Tomar?".</p>
+    </section>
+
+    <section id="rotinas" class="secao">
+      <h3>Rotinas Diárias Personalizadas</h3>
+      <form class="formulario">
+        <fieldset>
+          <legend>Informações da Rotina</legend>
+
+          <label for="nome">Nome do Idoso:</label>
+          <input id="nome" type="text" placeholder="Digite o nome do Idoso" />
+
+          <label for="idade">Idade:</label>
+          <input id="idade" type="text" placeholder="Digite a idade do Idoso" />
+
+          <label for="medicamento">Medicamento:</label>
+          <input id="medicamento" type="text" placeholder="Digite o Medicamento" />
+
+          <label for="atividade">Atividade:</label>
+          <input id="atividade" type="text" placeholder="Ex. Após fisioterapia" />
+
+          <label for="horario">Horário do dia:</label>
+          <input id="horario" type="text" placeholder="Ex. Manhã/Tarde/Noite" />
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="medicamentos" class="secao">
+      <h3>Medicamentos</h3>
+      <p>Liste os medicamentos que o idoso toma:</p>
+      <form>
+        <fieldset id="lista-medicamentos">
+          <label for="medicamento1">Insira o Medicamento 1:</label>
+          <input type="text" id="medicamento1" placeholder="Insira o Medicamento" />
+
+          <label for="medicamento2">Insira o Medicamento 2:</label>
+          <input type="text" id="medicamento2" placeholder="Insira o Medicamento" />
+        </fieldset>
+
+        <button type="button" id="btn-add-medicamento">+ Adicionar mais</button>
+        <button type="button" id="btn-salvar-rotina">💾 Salvar Rotina</button>
+        <button type="button" id="btn-gerar-pdf">📄 Gerar Ficha em PDF</button>
+      </form>
+    </section>
+
+    <section id="telefones" class="secao">
+      <h3>Telefones úteis</h3>
+      <ul class="telefones">
+        <li>📞 Pronto Socorro Central: (13) 3569-5900</li>
+        <li>💊 Farmácia Popular: 136</li>
+        <li>🚨 Emergência: 192</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; Conecta Sênior. Todos os direitos reservados. Feito por Jennifer da Silva Guedes – RA 244457.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
