@@ -1,4 +1,4 @@
-# 💊Como tomar? - Ficha de Medicamentos</h1>
+# 💊Conecta Sênior - A ponte entre o idoso e seu cuidador.
 ## 💊Bem vindos ao *Conecta Sênior*!
 **Este projeto criado para o meu segundo projeto de extensão curricular na Universidade Santa Cecília - Santos/São Paulo.**
 
